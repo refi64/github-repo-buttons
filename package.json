@@ -1,6 +1,6 @@
 {
   "name": "github-repo-buttons",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A lightweight library for embeddable GitHub star/watch/fork buttons",
   "main": "dist/github-repo-buttons.js",
   "homepage": "https://refi64.com/github-repo-buttons",
