@@ -8,43 +8,43 @@ $hover-count-color: #0366d6;
 
 
 @mixin background-image($color, $gradient) {
-  background-color: $color;
-  background-image: linear-gradient(-180deg, $gradient 0%, $color 90%);
+  background-color: $color !important;
+  background-image: linear-gradient(-180deg, $gradient 0%, $color 90%) !important;
 }
 
 
 @mixin border($alpha) {
-  border: 1px solid opacify($border-color, $alpha);
+  border: 1px solid opacify($border-color, $alpha) !important;
 }
 
 @mixin border-override-parent() {
-  border-radius: $border-radius 0 0 $border-radius;
-  margin: -1px;
-  margin-right: 0px;
+  border-radius: $border-radius 0 0 $border-radius !important;
+  margin: -1px !important;
+  margin-right: 0px !important;
 }
 
 
 github-repo-button, .github-repo-button, [github-repo-button] {
   @include border(0.2);
 
-  border-radius: $border-radius;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 20px;
+  border-radius: $border-radius !important;
+  display: inline-block !important;
+  font-family: sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important;
 
   .gh-button-inside {
     @include background-image(#eff3f6, #fafbfc);
 
-    border-right: 1px solid opacify($border-color, 0.2);
-    color: $base-color;
-    float: left;
-    padding: $padding;
-    text-decoration: none;
+    border-right: 1px solid opacify($border-color, 0.2) !important;
+    color: $base-color !important;
+    float: left !important;
+    padding: $padding !important;
+    text-decoration: none !important;
 
-    cursor: pointer;
-    user-select: none;
+    cursor: pointer !important;
+    user-select: none !important;
 
 
     &:hover {
@@ -57,26 +57,26 @@ github-repo-button, .github-repo-button, [github-repo-button] {
       @include border(0.35);
       @include border-override-parent();
 
-      background-color: $active-background;
-      background-image: none;
+      background-color: $active-background !important;
+      background-image: none !important;
 
-      box-shadow: inset 0 0.15em 0.3em opacify($border-color, 0.15);
+      box-shadow: inset 0 0.15em 0.3em opacify($border-color, 0.15) !important;
     }
   }
 
   .gh-button-svg {
-    display: inline;
-    vertical-align: text-top;
+    display: inline !important;
+    vertical-align: text-top !important;
   }
 
   .gh-button-count {
-    color: $base-color;
-    float: left;
-    padding: $padding;
-    text-decoration: none;
+    color: $base-color !important;
+    float: left !important;
+    padding: $padding !important;
+    text-decoration: none !important;
 
     &:hover {
-      color: $hover-count-color;
+      color: $hover-count-color !important;
     }
   }
 }
