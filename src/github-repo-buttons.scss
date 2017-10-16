@@ -1,0 +1,82 @@
+$base-color: #24292e;
+$border-color: rgba(27, 31, 35, 0);
+$border-radius: 0.25em;
+$padding: 3px 10px;
+
+$active-background: #e9ecef;
+$hover-count-color: #0366d6;
+
+
+@mixin background-image($color, $gradient) {
+  background-color: $color;
+  background-image: linear-gradient(-180deg, $gradient 0%, $color 90%);
+}
+
+
+@mixin border($alpha) {
+  border: 1px solid opacify($border-color, $alpha);
+}
+
+@mixin border-override-parent() {
+  border-radius: $border-radius 0 0 $border-radius;
+  margin: -1px;
+  margin-right: 0px;
+}
+
+
+github-repo-button, .github-repo-button, [github-repo-button] {
+  @include border(0.2);
+
+  border-radius: $border-radius;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+
+  .gh-button-inside {
+    @include background-image(#eff3f6, #fafbfc);
+
+    border-right: 1px solid opacify($border-color, 0.2);
+    color: $base-color;
+    float: left;
+    padding: $padding;
+    text-decoration: none;
+
+    cursor: pointer;
+    user-select: none;
+
+
+    &:hover {
+      @include background-image(#e6ebf1, #e6ebf1);
+      @include border(0.35);
+      @include border-override-parent();
+    }
+
+    &:active {
+      @include border(0.35);
+      @include border-override-parent();
+
+      background-color: $active-background;
+      background-image: none;
+
+      box-shadow: inset 0 0.15em 0.3em opacify($border-color, 0.15);
+    }
+  }
+
+  .gh-button-svg {
+    display: inline;
+    vertical-align: text-top;
+  }
+
+  .gh-button-count {
+    color: $base-color;
+    float: left;
+    padding: $padding;
+    text-decoration: none;
+
+    &:hover {
+      color: $hover-count-color;
+    }
+  }
+}
